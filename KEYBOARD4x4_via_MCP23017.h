@@ -97,7 +97,7 @@ unsigned char Read_Keyboard(){
         OUT_DATA*=2;
         IN_DATA=0x00;   
     }
-    return 0;
+    return CODE_NOKEY;
 }
 
 void Test_Keyboard(unsigned char out){
@@ -107,62 +107,78 @@ void Test_Keyboard(unsigned char out){
 }
 
 unsigned char Resolve_Keyboard(unsigned char in, unsigned char out){
-   if( in == 0 || out == 0) return 0;
+   if( in == 0 || out == 0) return CODE_NOKEY;
    unsigned char result=0;
    if( out == COL_A){
        if( in == ROW_A){
-           result=16;
+           result=0xD;
+           //16
        }
        if( in == ROW_B){
-           result=15;
+           result=0xC;
+           //15
        }
        if( in == ROW_C){
-           result=14;
+           result=0xB;
+           //14
        }
        if( in == ROW_D){
-           result=13;
+           result=0xA;
+           //13
        }       
    }
    if( out == COL_B){
        if( in == ROW_A){
-           result=12;
+           result=0xE;
+           //12
        }
        if( in == ROW_B){
-           result=11;
+           result=0x9;
+           //11
        }
        if( in == ROW_C){
-           result=10;
+           result=0x6;
+           //10
        }
        if( in == ROW_D){
-           result=9;
+           result=0x3;
+           //9
        }       
    }
    if( out == COL_C){
        if( in == ROW_A){
-           result=8;
+           result=0x0;
+           //8
        }
        if( in == ROW_B){
-           result=7;
+           result=0x8;
+           //7
        }
        if( in == ROW_C){
-           result=6;
+           result=0x5;
+           //6
        }
        if( in == ROW_D){
-           result=5;
+           result=0x2;
+           //5
        }       
    }
    if( out == COL_D){
        if( in == ROW_A){
-           result=4;
+           result=0xF;
+           //4
        }
        if( in == ROW_B){
-           result=3;
+           result=0x7;
+           //3
        }
        if( in == ROW_C){
-           result=2;
+           result=0x4;
+           //2
        }
        if( in == ROW_D){
-           result=1;
+           result=0x1;
+           //1
        }       
    }   
    return result;

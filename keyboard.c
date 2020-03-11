@@ -27,10 +27,15 @@ void main(void) {
     TestDevice();
     
     Init_Keyboard();
+    unsigned char result=0x00;
+    unsigned char value=0;
+    char c=0;
 
     while(1){
         delay_ms(100);
-        LATD=Read_Keyboard();
+        LATD=result=Read_Keyboard();
+        c=getChar(result);
+        value=getValue(result);
         NOP();
     }
     return;
