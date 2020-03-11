@@ -21,7 +21,7 @@
 
 /*  
  * Author: Jiri Konecny 
- * Comments: Liblary for 4x4KEYBOARd connected via expander MCP23017
+ * Comments: Library for 4x4KEYBOARd connected via expander MCP23017
  * Revision history: 1.0 / 070320
  */
 
@@ -30,6 +30,7 @@
 #ifndef KEYABOARD4x4_VIA_MCP23017_H
 #define	KEYABOARD4x4_VIA_MCP23017_H
 #include "MCP23017_FunctionLib.h"
+#include "KEYBOARD4x4_Charmap.h"
 
 #define INTB PORTBbits.RB4 
 #define INTA PORTBbits.RB5
